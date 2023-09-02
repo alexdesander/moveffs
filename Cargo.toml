@@ -1,0 +1,21 @@
+[package]
+name = "moveffs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.75"
+clap = { version = "4.4.2", features = ["derive"] }
+humantime = "2.1.0"
+mp3-duration = "0.1.10"
+
+
+[dependencies.rodio]
+version = "0.17.1"
+default-features = false
+features = ["minimp3"]
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
